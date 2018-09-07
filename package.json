@@ -32,7 +32,7 @@
     "test": "cross-env NODE_ENV=test jest --coverage",
     "test:watch": "cross-env NODE_ENV=test jest --watchAll",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -b gh-pages -d build"
+    "deploy": "firebase deploy"
   },
   "dependencies": {
     "babel-polyfill": "6.26.0",
@@ -41,7 +41,6 @@
     "cross-env": "^5.1.6",
     "express": "4.16.3",
     "fontfaceobserver": "2.0.13",
-    "gh-pages": "^1.2.0",
     "history": "4.7.2",
     "hoist-non-react-statics": "2.5.0",
     "immutable": "3.8.2",
