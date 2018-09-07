@@ -22,10 +22,6 @@
     "rules": {
       "no-param-reassign": "off",
       "function-paren-newline": "off",
-      "arrow-parens": [
-        "error",
-        "always"
-      ],
       "arrow-body-style": [
         2,
         "as-needed"
