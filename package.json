@@ -1,7 +1,8 @@
 {
   "name": "react-redux-boilerplate",
   "version": "1.0.0",
-  "description": "A minimal react-redux boilerplate with all the best practices",
+  "description":
+    "A minimal react-redux boilerplate with all the best practices",
   "repository": {
     "type": "git",
     "url": "git://github.com/flexdinesh/react-redux-boilerplate.git"
@@ -12,9 +13,11 @@
   },
   "author": "Dinesh Pandiyan",
   "license": "MIT",
+  "homepage": "https://softwaresenipt.github.io/newscrew-poc",
   "scripts": {
     "prebuild": "npm run build:clean",
-    "build": "cross-env NODE_ENV=production webpack --config config/webpack.prod.babel.js --color -p --progress --hide-modules --display-optimization-bailout",
+    "build":
+      "cross-env NODE_ENV=production webpack --config config/webpack.prod.babel.js --color -p --progress --hide-modules --display-optimization-bailout",
     "build:clean": "rimraf ./build",
     "start": "cross-env NODE_ENV=development node server",
     "start:production": "npm run test && npm run build && npm run start:prod",
@@ -27,7 +30,9 @@
     "pretest": "npm run test:clean && npm run lint",
     "test:clean": "rimraf ./coverage",
     "test": "cross-env NODE_ENV=test jest --coverage",
-    "test:watch": "cross-env NODE_ENV=test jest --watchAll"
+    "test:watch": "cross-env NODE_ENV=test jest --watchAll",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -b gh-pages -d build"
   },
   "dependencies": {
     "babel-polyfill": "6.26.0",
