@@ -73,6 +73,10 @@ export const sendNotification = (name, title, desc, location) => async (dispatch
       console.log(response)
       if (response.id) {
         dispatch(sendingNotificationDone('Notification sent!'))
+      } else if (!response.recipients) {
+        dispatch(sendingNotificationError('Cannot find user within radius 5KM'))
+      } else {
+        dispatch(sendingNotificationError('Unknown error'))
       }
     } catch (error) {
       dispatch(sendingNotificationError(error.message))

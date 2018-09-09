@@ -57,7 +57,9 @@ class VideoUploadForm extends Component {
     }
   }
   render() {
-    const { notificationSending, notificationResponse, notificationError, dispatch } = this.props;
+    const { notificationSending, notificationResponse, notificationError, dispatch, userLatitude, userLongitude } = this.props;
+    const { name, title, desc, sendTo } = this.state
+    const fieldNotEmpty = name && title && desc
     return (
       <div className="VideoUploadForm__root">
         <div>
@@ -88,14 +90,16 @@ class VideoUploadForm extends Component {
             value={this.state.sendTo}
             onChange={this.sendTohandleChange}>
             <FormControlLabel value="all" control={<Radio />} label="Send to all user" />
-            <FormControlLabel value="radius" control={<Radio />} label="Send to only user on radius 5KM" />
+            {userLatitude && userLongitude && (
+              <FormControlLabel value="radius" control={<Radio />} label={`Send to user on radius 5KM (Lat: ${userLatitude}, Long: ${userLongitude})`} />
+            )}
           </RadioGroup>
         </div>
         <Button
           onClick={this.onClick}
           variant="contained"
           className="VideoUploadForm__button"
-          disabled={notificationSending}
+          disabled={notificationSending || !fieldNotEmpty}
           color="primary">
           {`${notificationSending ? 'Sending...' : 'Send Video'}`}
         </Button>
