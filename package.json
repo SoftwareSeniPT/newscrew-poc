@@ -1,8 +1,7 @@
 {
   "name": "react-redux-boilerplate",
   "version": "1.0.0",
-  "description":
-    "A minimal react-redux boilerplate with all the best practices",
+  "description": "A minimal react-redux boilerplate with all the best practices",
   "repository": {
     "type": "git",
     "url": "git://github.com/flexdinesh/react-redux-boilerplate.git"
@@ -16,8 +15,7 @@
   "homepage": "https://softwaresenipt.github.io/newscrew-poc",
   "scripts": {
     "prebuild": "npm run build:clean",
-    "build":
-      "cross-env NODE_ENV=production webpack --config config/webpack.prod.babel.js --color -p --progress --hide-modules --display-optimization-bailout",
+    "build": "cross-env NODE_ENV=production webpack --config config/webpack.prod.babel.js --color -p --progress --hide-modules --display-optimization-bailout",
     "build:clean": "rimraf ./build",
     "start": "cross-env NODE_ENV=development node server",
     "start:production": "npm run test && npm run build && npm run start:prod",
@@ -35,6 +33,8 @@
     "deploy": "firebase deploy"
   },
   "dependencies": {
+    "@material-ui/core": "^3.0.2",
+    "@material-ui/icons": "^3.0.1",
     "babel-polyfill": "6.26.0",
     "chalk": "^2.3.2",
     "compression": "1.7.2",
@@ -53,12 +53,14 @@
     "react-dom": "^16.4.0",
     "react-helmet": "5.2.0",
     "react-loadable": "^5.4.0",
+    "react-multimedia-capture": "^1.2.0",
     "react-redux": "5.0.7",
     "react-router-dom": "^4.3.1",
     "react-router-redux": "5.0.0-alpha.6",
     "redux": "3.7.2",
     "redux-immutable": "4.0.0",
     "redux-saga": "0.16.0",
+    "redux-thunk": "^2.3.0",
     "reselect": "3.0.1",
     "sanitize.css": "4.1.0",
     "warning": "^4.0.1",
@@ -80,6 +82,7 @@
     "babel-preset-react": "6.24.1",
     "babel-preset-stage-0": "6.24.1",
     "circular-dependency-plugin": "5.0.2",
+    "copy-webpack-plugin": "^4.5.2",
     "css-loader": "0.28.11",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",

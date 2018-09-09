@@ -1,0 +1,16 @@
+.Home__root {
+    height: calc(100vh - 150px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Home_splash {
+    max-width: 300px;
+    text-align: center;
+}
+
+.Home_splash h4 {
+    font-size: 26px;
+    margin: 0;
+}
